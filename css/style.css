@@ -1,0 +1,656 @@
+/* ============================================================
+   [PLACEHOLDER] Hoja de estilos base
+   Reemplaza los valores marcados con [PLACEHOLDER] por los datos
+   reales de tu marca (colores, logo, tipografía si corresponde).
+   ============================================================ */
+
+:root {
+  /* --- Paleta --- [PLACEHOLDER: color de marca] --- */
+  --color-primary: #005FAE;
+  --color-primary-dark: #00457F;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #E5E7EA;
+  --color-bg-alt-2: #F2F2F2;
+  --color-footer-bg: #E5E4E4;
+  --color-text: #212529;
+  --color-text-light: #FFFFFF;
+  --color-whatsapp: #25D366;
+
+  /* --- Tipografía --- */
+  --font-main: 'Montserrat', Arial, sans-serif;
+
+  /* --- Layout --- */
+  --header-height: 65px;
+  --max-width: 1200px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  padding-top: var(--header-height);
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+ul { list-style: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-height);
+  background: var(--color-primary);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  color: var(--color-text-light);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+}
+
+.logo span { font-weight: 300; }
+
+.logo-img {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.main-nav a {
+  color: var(--color-text-light);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  transition: opacity .2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  opacity: 1;
+  border-bottom: 2px solid var(--color-text-light);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-toggle span {
+  width: 24px; height: 2px;
+  background: var(--color-text-light);
+}
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+
+.btn {
+  display: inline-block;
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 14px 22px;
+  border: none;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.btn:hover { background: var(--color-primary-dark); }
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-text-light);
+  color: var(--color-text-light);
+}
+
+.btn-outline:hover {
+  background: var(--color-text-light);
+  color: var(--color-primary);
+}
+
+/* --- Botón "Postular" del header: destaca en blanco sobre el fondo del nav --- */
+
+.main-nav a.nav-cta {
+  background: var(--color-text-light);
+  color: var(--color-primary-dark);
+  opacity: 1;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  animation: nav-cta-pulse 2.2s ease-in-out infinite;
+}
+
+.main-nav a.nav-cta:hover {
+  background: var(--color-text-light);
+  color: var(--color-primary);
+  border-bottom: none;
+  animation-play-state: paused;
+}
+
+@keyframes nav-cta-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,.5); }
+  50% { transform: scale(1.06); box-shadow: 0 0 0 6px rgba(255,255,255,0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-cta { animation: none; }
+}
+
+/* ============================================================
+   HERO (portada de cada página)
+   ============================================================ */
+
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(0deg, rgba(0,0,0,.55), rgba(0,0,0,.25)),
+              url('../img/hero-placeholder.jpg') center/cover no-repeat;
+  /* [PLACEHOLDER: imagen o video de fondo del proyecto] */
+  color: var(--color-text-light);
+  padding: 80px 0 48px;
+  box-shadow: 0 12px 28px -12px rgba(0,0,0,.35);
+}
+
+/* --- Variante con video de fondo (usada en el hero de index.html) --- */
+
+.hero--video {
+  background: none; /* el video reemplaza la imagen de fondo */
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,.6), rgba(0,0,0,.25));
+  z-index: 1;
+}
+
+.hero--video .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.15;
+  max-width: 720px;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+}
+
+.hero--video h1 {
+  font-size: 64px;
+  letter-spacing: 0.5px;
+  max-width: 900px;
+}
+
+.hero p {
+  font-size: 16px;
+  max-width: 560px;
+  opacity: 0.95;
+}
+
+.hero-specs {
+  display: flex;
+  gap: 32px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.hero-specs .spec {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.hero-specs .spec strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ============================================================
+   SECCIONES DE CONTENIDO
+   ============================================================ */
+
+section.block {
+  padding: 72px 0;
+}
+
+.bg-alt { background: var(--color-bg-alt); }
+.bg-alt-2 { background: var(--color-bg-alt-2); }
+
+.kicker {
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+h2.section-title {
+  color: var(--color-primary);
+  font-size: 34px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.lead {
+  font-size: 17px;
+  max-width: 760px;
+  color: var(--color-text);
+  opacity: 0.85;
+}
+
+/* --- Grid de tarjetas (usado en "qué hacemos", "nuestra labor", etc.) --- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.card {
+  display: block;
+  background: var(--color-bg);
+  padding: 32px 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+
+.card:hover .icon,
+.card:focus-visible .icon {
+  color: var(--color-primary-dark, var(--color-primary));
+}
+
+.card .icon {
+  font-size: 30px;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* --- Timeline (usado en "nuestra labor" y "qué hacemos") --- */
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 56px;
+  position: relative;
+}
+
+/* Línea base (gris) que conecta los pasos */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 27px; left: calc(12.5% - 1px); right: calc(12.5% - 1px);
+  height: 2px;
+  background: #DADFE4;
+  z-index: 0;
+}
+
+/* Línea de progreso (color de marca) que avanza hasta el paso activo */
+.timeline::after {
+  content: '';
+  position: absolute;
+  top: 27px; left: calc(12.5% - 1px);
+  width: var(--timeline-progress, 0%);
+  height: 2px;
+  background: var(--color-primary);
+  z-index: 0;
+  transition: width .3s ease;
+}
+
+.timeline .step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px 14px 18px;
+  background: var(--color-bg);
+  border-radius: 4px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.timeline .step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+.timeline .step .dot {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid #DADFE4;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #9AA4AC;
+  transition: background .25s ease, border-color .25s ease, color .25s ease;
+}
+
+.timeline .step.active .dot,
+.timeline .step.done .dot {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.timeline .step .step-number {
+  position: absolute;
+  top: 12px; right: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #C3CAD1;
+}
+
+.timeline .step.active .step-number,
+.timeline .step.done .step-number {
+  color: var(--color-primary);
+}
+
+.timeline .step h4 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.timeline .step.active h4 { color: var(--color-primary); }
+
+.timeline .step p {
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+
+@media (max-width: 860px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .timeline::before {
+    top: 0; bottom: 0; left: 27px; right: auto;
+    width: 2px; height: auto;
+  }
+  /* En mobile el progreso se transmite con el color de cada dot (activo/completado);
+     la línea de progreso vertical se omite por simplicidad. */
+  .timeline::after { display: none; }
+  .timeline .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 18px;
+    text-align: left;
+    align-items: center;
+    padding: 14px 14px 14px 0;
+  }
+  .timeline .step .dot { margin: 0; }
+  .timeline .step .step-number { top: 8px; right: 8px; }
+}
+
+/* --- Ubicación / mapa --- */
+
+.location-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 32px;
+}
+
+.tag-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.tag-list li {
+  background: var(--color-bg);
+  border: 1px solid #ddd;
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+.map-embed {
+  width: 100%;
+  height: 360px;
+  background: var(--color-bg-alt-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 13px;
+  /* [PLACEHOLDER: reemplazar por <iframe> de Google Maps] */
+}
+
+/* ============================================================
+   CONTACTO / POSTULACIÓN
+   ============================================================ */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 32px;
+}
+
+.contact-info li {
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.contact-info li strong {
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.contact-form {
+  background: var(--color-bg);
+  padding: 32px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.contact-form label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  font-family: var(--font-main);
+  font-size: 14px;
+}
+
+.contact-form button { margin-top: 24px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.site-footer {
+  background: var(--color-footer-bg);
+  padding: 48px 0 24px;
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.footer-cols h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.footer-logo-img {
+  height: 22px;
+  width: auto;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.footer-legal {
+  border-top: 1px solid rgba(0,0,0,.1);
+  padding-top: 20px;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* ============================================================
+   WHATSAPP FLOTANTE
+   ============================================================ */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: var(--color-whatsapp);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  z-index: 999;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 860px) {
+  .location-wrap,
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0; right: 0;
+    background: var(--color-primary);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 18px;
+    transform: translateY(-150%);
+    transition: transform .25s ease;
+  }
+  .main-nav.open { transform: translateY(0); }
+  .nav-toggle { display: flex; }
+  .hero h1 { font-size: 34px; }
+  .hero--video h1 { font-size: 36px; }
+  h2.section-title { font-size: 26px; }
+}

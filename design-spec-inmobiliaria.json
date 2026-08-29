@@ -1,0 +1,93 @@
+{
+  "prompt_uso": "Usa este JSON como especificación de diseño para crear una landing page de un proyecto inmobiliario (loteo/casas), reproduciendo el ESTILO, LA ESTRUCTURA Y LOS PATRONES DE INTERACCIÓN de referencia — no el contenido, nombres ni marca del sitio original.",
+
+  "tipo_de_sitio": "Landing page de ficha de proyecto inmobiliario (SPA tipo React/Vue con secciones ancladas por scroll y menú sticky).",
+
+  "tipografia": {
+    "familia_principal": "Montserrat (sans-serif), pesos 100 a 900",
+    "familia_decorativa_opcional": "Una tipografía script/display para acentos puntuales (ej. sellos o etiquetas tipo 'lanzamiento')",
+    "uso": {
+      "h1_hero": "62px, peso 300 (light), color blanco sobre imagen/video de fondo",
+      "h2_kicker": "12-13px, peso 700 (bold), color de marca, todo mayúsculas, actúa como antetítulo de sección",
+      "h3_subtitulo": "38px, peso 500, color de marca",
+      "texto_botones": "10-11px real (escala reducida por line-height), mayúsculas, peso 400-600",
+      "parrafo": "14-16px, peso 400"
+    }
+  },
+
+  "paleta_de_colores": {
+    "color_marca_primario": "un azul institucional sólido (ej. rgb(0,95,174)) usado en: header, títulos de sección, botones principales",
+    "fondo_base": "blanco (#FFFFFF)",
+    "fondo_alterno_secciones": "gris muy claro (rgb(229,231,234) y rgb(242,242,242)) para alternar bloques y dar separación visual sin usar líneas divisorias",
+    "fondo_footer_legal": "gris (rgb(229,228,228))",
+    "texto_general": "gris oscuro casi negro (rgb(33,37,41))",
+    "boton_whatsapp_flotante": "verde WhatsApp (rgb(37,211,102)), circular, fijo en esquina inferior",
+    "patron": "paleta muy acotada (2-3 colores) + escala de grises para separar secciones; el color de marca se reserva para CTAs, títulos y header"
+  },
+
+  "layout_general": {
+    "header": {
+      "tipo": "barra superior fija/sticky, fondo color de marca, ~65px alto",
+      "contenido": "logo a la izquierda, menú horizontal de navegación por anclas (Características, Ubicación, Tour Virtual, Modelos, Contacto), botón CTA destacado a la derecha ('Cotizar')"
+    },
+    "menu_secundario_sticky": {
+      "descripcion": "segundo menú que aparece al hacer scroll dentro de la ficha del proyecto, solo visible en desktop, replica los anclajes de sección con estado activo según el scroll"
+    },
+    "hero": {
+      "descripcion": "sección de portada a pantalla completa con imagen o video de fondo, overlay oscuro, título grande en blanco, datos clave en iconos/números (dormitorios, baños, superficie) y una etiqueta de urgencia/promoción (ribbon o badge)",
+      "elementos": ["h1 grande", "fila de specs con iconos", "badge de estado (ej. 'lanzamiento', 'últimas unidades')"]
+    },
+    "secciones_contenido": {
+      "patron_repetido": "cada sección tiene: kicker corto en color de marca + mayúsculas, luego h3 con el título real, luego contenido (texto, galería, mapa o carrusel)",
+      "alternancia_de_fondo": "las secciones alternan entre blanco y gris claro para crear ritmo visual sin bordes"
+    },
+    "galeria": {
+      "tipo": "grid/carrusel de imágenes con lightbox al hacer click (estilo fancybox)"
+    },
+    "ubicacion": {
+      "descripcion": "sección con dirección, chips/etiquetas de puntos de interés cercanos (colegio, supermercado, parque) y mapa embebido o imagen de mapa, más botón 'Cómo llegar' que abre Waze/Google Maps"
+    },
+    "tour_virtual": {
+      "descripcion": "grid de tarjetas con miniatura + play button que abren un recorrido 3D o video por modelo de casa"
+    },
+    "masterplan": {
+      "descripcion": "imagen grande del plano maestro del proyecto, a menudo con zonas clickeables o numeradas"
+    },
+    "selector_de_modelos": {
+      "patron": "tabs o pills para elegir entre distintos modelos de casa; al seleccionar uno se actualiza: galería de fachadas, planta, ficha técnica (dormitorios, baños, superficie, precio 'desde', orientación) y botón de cotización",
+      "sub_tabs": "dentro de cada modelo hay sub-pestañas: Fachadas / Plantas / Detalle"
+    },
+    "avance_de_obra": {
+      "descripcion": "línea de tiempo horizontal (timeline/stepper) con estados: Lanzamiento -> En construcción -> Próxima entrega -> Entrega inmediata, con el estado activo resaltado en color de marca; incluye enlace a fotos/detalle de avance real de la obra"
+    },
+    "contacto": {
+      "descripcion": "bloque final con datos de la ejecutiva/vendedor asignado (foto, nombre, email), dirección de sala de ventas, dirección de oficina comercial, horario de atención, teléfono, y accesos directos a Email y WhatsApp",
+      "boton_flotante": "icono de WhatsApp circular fijo en la esquina inferior derecha, visible en todo el recorrido de la página"
+    },
+    "footer_legal": {
+      "descripcion": "bloque final con fondo gris y texto pequeño (letra legal/disclaimer) sobre superficies, renders referenciales y condiciones de promociones de pago"
+    }
+  },
+
+  "componentes_reutilizables": {
+    "boton_primario": {
+      "fondo": "color de marca",
+      "texto": "blanco, mayúsculas, tamaño pequeño (10-12px), letter-spacing amplio",
+      "padding": "generoso verticalmente (ej. 14px 19px)",
+      "forma": "rectangular sin bordes redondeados (estética institucional/corporativa)"
+    },
+    "badge_estado": "etiqueta corta con fondo de color y texto en mayúsculas para comunicar urgencia o etapa (lanzamiento, últimas unidades, entrega inmediata)",
+    "iconos": "Font Awesome para iconografía de specs (cama, baño, m²), ubicación y contacto",
+    "tabs_pills": "pestañas simples subrayadas o con fondo sólido para alternar entre modelos/plantas",
+    "timeline_horizontal": "pasos conectados por una línea, círculos como hitos, el hito activo con color de marca y los demás en gris"
+  },
+
+  "tono_y_estilo_visual": {
+    "personalidad": "corporativo, confiable, limpio — pensado para conversión (venta inmobiliaria), no editorial ni artístico",
+    "fotografia": "renders arquitectónicos y fotos de avance de obra, alto contraste, ambientes cálidos y naturales",
+    "espaciado": "amplio, con mucho aire entre secciones; jerarquía tipográfica marcada (kicker pequeño + título grande)",
+    "responsive": "menú secundario y algunos bloques se ocultan en mobile, layout se apila verticalmente, CTA de WhatsApp siempre visible"
+  },
+
+  "objetivo_de_conversion": "Cada sección empuja hacia dos acciones: 'Cotizar' (formulario/modal) y contacto directo por WhatsApp; el flujo de la página está diseñado como embudo: hero llamativo -> información de valor (ubicación, tour, modelos) -> prueba de avance real -> contacto facilitado."
+}
