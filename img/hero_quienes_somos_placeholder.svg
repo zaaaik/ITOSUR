@@ -2,7 +2,7 @@
   <!-- ============================================================
        [PLACEHOLDER] Ilustración genérica de oficina.
        Reemplázala por una foto real cuando la tengas
-       (ver img/hero-valdivia-poster.jpg como ejemplo de formato).
+       (ver img/hero_valdivia_poster.jpg como ejemplo de formato).
        ============================================================ -->
   <defs>
     <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">

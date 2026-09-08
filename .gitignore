@@ -1,8 +1,12 @@
 # Videos originales de respaldo (pesados, no usados por el sitio en vivo,
 # y superan el límite de tamaño de archivo de GitHub de 100MB).
-# El video que sí usa el sitio (video/hero-valdivia.mp4) NO está excluido.
-video/*-original*.mp4
+# El video que sí usa el sitio (video/hero_valdivia.mp4) NO está excluido.
+video/*_original*.mp4
+video/*_backup*.mp4
 
 # Archivos del sistema
 .DS_Store
 Thumbs.db
+
+# Configuración local del editor
+.vscode/

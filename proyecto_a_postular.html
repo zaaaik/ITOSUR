@@ -15,7 +15,7 @@
 
 <header class="site-header">
   <div class="container">
-    <a href="/" class="logo"><img src="/img/logo-letra-blanco.png" alt="ITO SUR - Entidad Patrocinante" class="logo-img"></a>
+    <a href="/" class="logo"><img src="/img/logo_letra_blanco.png" alt="ITO SUR - Entidad Patrocinante" class="logo-img"></a>
     <nav class="main-nav">
       <a href="/">Inicio</a>
       <a href="/quienes-somos">¿Quiénes somos?</a>
@@ -110,7 +110,8 @@
         </li>
         <li>
           <strong>Email</strong>
-          [PLACEHOLDER: email de contacto]
+          <!-- [PLACEHOLDER] Correo de muestra (u.diego@outlook.com). Reemplázalo por el correo real de la empresa aquí y en los botones de más abajo. -->
+          u.diego@outlook.com
         </li>
         <li>
           <strong>Teléfono</strong>
@@ -123,26 +124,46 @@
       </ul>
 
       <!--
-        [PLACEHOLDER] Este formulario es solo de maquetación (no envía datos).
-        Para que funcione, conéctalo a un servicio de envío de formularios
-        (por ejemplo Formspree, un backend propio, o un endpoint serverless)
-        y define el atributo "action" con esa URL.
+        [PLACEHOLDER] Correo de muestra: u.diego@outlook.com.
+        Reemplázalo por el correo real de la empresa en el atributo
+        data-to del <form> de abajo (una sola vez, ahí se usa para los 3 botones).
       -->
-      <form class="contact-form" action="#" method="POST">
-        <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" placeholder="[PLACEHOLDER]">
+      <div class="email-options">
+        <p>Completa tus datos y postula enviando tu proyecto directo a nuestro correo:</p>
 
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" placeholder="[PLACEHOLDER]">
+        <form id="postulacion-form" class="postulacion-form" data-to="u.diego@outlook.com" novalidate>
+          <div class="form-field">
+            <label for="post-nombre">Nombre completo</label>
+            <input type="text" id="post-nombre" name="nombre" required>
+          </div>
+          <div class="form-field">
+            <label for="post-email">Tu correo</label>
+            <input type="email" id="post-email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="post-telefono">Teléfono</label>
+            <input type="tel" id="post-telefono" name="telefono">
+          </div>
+          <div class="form-field">
+            <label for="post-descripcion">Cuéntanos tu proyecto</label>
+            <textarea id="post-descripcion" name="descripcion" rows="4" required placeholder="Describe brevemente tu vivienda y las mejoras que necesitas"></textarea>
+          </div>
 
-        <label for="proyecto">Nombre del proyecto</label>
-        <input type="text" id="proyecto" name="proyecto" placeholder="[PLACEHOLDER]">
+          <button type="button" id="btn-enviar-gmail" class="btn email-option-btn">
+            <svg class="email-option-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 5.5v13a1.5 1.5 0 0 1-1.5 1.5H19V8.2l-7 5.4-7-5.4V20H3.5A1.5 1.5 0 0 1 2 18.5v-13A1.5 1.5 0 0 1 3.5 4h.7L12 10.4 19.8 4h.7A1.5 1.5 0 0 1 22 5.5Z"/></svg>
+            Enviar por Gmail
+          </button>
 
-        <label for="mensaje">Cuéntanos sobre tu proyecto</label>
-        <textarea id="mensaje" name="mensaje" rows="5" placeholder="[PLACEHOLDER]"></textarea>
+          <button type="button" id="btn-enviar-outlook" class="btn btn-outline-primary email-option-btn">
+            <svg class="email-option-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 5.5v13a1.5 1.5 0 0 1-1.5 1.5H19V8.2l-7 5.4-7-5.4V20H3.5A1.5 1.5 0 0 1 2 18.5v-13A1.5 1.5 0 0 1 3.5 4h.7L12 10.4 19.8 4h.7A1.5 1.5 0 0 1 22 5.5Z"/></svg>
+            Enviar por Hotmail / Outlook
+          </button>
 
-        <button type="submit" class="btn">Enviar postulación</button>
-      </form>
+          <button type="button" id="btn-enviar-mailto" class="email-option-link">
+            O ábrelo con tu app de correo predeterminada
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -151,7 +172,7 @@
   <div class="container">
     <div class="footer-cols">
       <div>
-        <img src="/img/logo-letra.png" alt="ITO SUR" class="footer-logo-img">
+        <img src="/img/logo_letra.png" alt="ITO SUR" class="footer-logo-img">
         <p><a href="https://maps.app.goo.gl/pMrjLkAXb1rFjqR2A" target="_blank" rel="noopener">René Schneider 2991, Valdivia, Los Ríos</a></p>
       </div>
       <div>

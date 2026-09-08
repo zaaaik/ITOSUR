@@ -16,13 +16,13 @@ services:
     routes:
       - type: rewrite
         source: /quienes-somos
-        destination: /quienes-somos.html
+        destination: /quienes_somos.html
       - type: rewrite
         source: /nuestra-labor
-        destination: /nuestra-labor.html
+        destination: /nuestra_labor.html
       - type: rewrite
         source: /que-hacemos
-        destination: /que-hacemos.html
+        destination: /que_hacemos.html
       - type: rewrite
         source: /proyecto-a-postular
-        destination: /proyecto-a-postular.html
+        destination: /proyecto_a_postular.html
